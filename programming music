@@ -1,0 +1,16 @@
+function myTestBot(myform) {
+var text = "";
+var Token = "5316xxxxxxxxxxxxxxxozxQj63_Dg";
+var ChatId = "18****909";
+
+text += "Name : "+ myform.namedValues['Name'][0];
+text += "%0A";
+text += "Email Id : "+ myform.namedValues['Email'][0];
+text += "%0A";
+text += "Phone Number : "+ myform.namedValues['Phone Number'][0];
+
+var Url = 'https://api.telegram.org/bot' + Token +'/sendMessage?chat_id='+ ChatId + '&text=' + text;
+var response = UrlFetchApp.fetch(Url);
+
+Logger.log(response.getContentText())
+}
